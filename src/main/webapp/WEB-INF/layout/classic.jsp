@@ -43,7 +43,6 @@
                         <ul class="nav navbar-nav">
                             <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value="/" />">Home</a></li>
                             <li class="${current == 'users' ? 'active' : ''}" ><a href="<spring:url value="/users.html" />">Users</a></li> <!--   must be a html-->
-                            <li><a href="#">Contact</a></li>
 
                         </ul>
 
