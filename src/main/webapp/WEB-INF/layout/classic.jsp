@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
+<%@include file="taglib.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +20,6 @@
 
     </head>
     <body>
-        <%@taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
         <tilesx:useAttribute name="current" />
         
         
