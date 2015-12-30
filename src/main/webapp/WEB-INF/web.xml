@@ -29,6 +29,8 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     
+<!--
+not more efficient for lazy initializition, we have no controll under transaction. More efficient is solution with findByBlog
     <filter>
         <filter-name>oemInViewFilter</filter-name>
         <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
@@ -41,5 +43,5 @@
         <filter-name>oemInViewFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    
+    -->
 </web-app>
