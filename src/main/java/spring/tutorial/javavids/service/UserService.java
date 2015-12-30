@@ -3,6 +3,8 @@ package spring.tutorial.javavids.service;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import spring.tutorial.javavids.entity.Blog;
 import spring.tutorial.javavids.entity.Item;
@@ -39,7 +41,7 @@ public class UserService {
         User user = findOne(id);
         List<Blog> blogs = blogRepository.findByUser(user);
         for (Blog blog : blogs) {
-            List<Item> items = itemRepository.findByBlog(blog);
+            List<Item> items = itemRepository.findByBlog(blog, new PageRequest(0, 10, Sort.Direction.DESC, "publishedDate"));
             blog.setItems(items);
         }
         
