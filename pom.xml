@@ -13,11 +13,22 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework.version>4.2.4.RELEASE</org.springframework.version>
+        <org.springframework.security.version>4.0.3.RELEASE</org.springframework.security.version>
         <apache.tiles>3.0.5</apache.tiles>
     </properties>
     
     <dependencies>
          
+        <dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-web</artifactId>
+	<version>${org.springframework.security.version}</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework.security</groupId>
+	<artifactId>spring-security-config</artifactId>
+	<version>${org.springframework.security.version}</version>
+</dependency>
         
         
         <dependency>
