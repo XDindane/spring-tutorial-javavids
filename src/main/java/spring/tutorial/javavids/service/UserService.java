@@ -17,6 +17,7 @@ import spring.tutorial.javavids.repository.UserRepository;
  *
  */
 @Service
+@Transactional
 public class UserService {
     
     @Autowired
@@ -49,4 +50,8 @@ public class UserService {
         return user;
         
     }    
+
+    public void save(User user) {
+        userRepository.save(user);
+    }
 }
