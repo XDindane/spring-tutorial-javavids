@@ -1,6 +1,7 @@
 package spring.tutorial.javavids.entity;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,7 +28,7 @@ public class User {
     @JoinTable
     private List<Role> roles;
     
-    @OneToMany(mappedBy = "user") // same as name of the attribute in blog
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE) // same as name of the attribute in blog
     private List<Blog> blogs;
     
     

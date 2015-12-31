@@ -68,6 +68,9 @@
 
             <div role="tabpanel" class="tab-pane" id="blog_${blog.id}">
                 <h2>${blog.name}</h2>
+                <p>
+                    <a class="btn btn-danger" href="<spring:url value="/blog/remove/${blog.id}.html"/>">remove blog</a>
+                </p>
                 <p>${blog.url}</p>
 
                 <table class="table table-bordered table-hover table-striped">
