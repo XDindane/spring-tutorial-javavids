@@ -8,10 +8,10 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http>
-        <csrf disabled="true" /> <!-- // form spring security 4-->
+        <csrf disabled="true" /> <!-- // for spring security 4-->
         <intercept-url pattern="/users**" access="hasRole('ADMIN')"/>
         <intercept-url pattern="/users/**" access="hasRole('ADMIN')"/>
-        <form-login />
+        <form-login login-page="/login.html"/>
         <logout />
     </http>
     
