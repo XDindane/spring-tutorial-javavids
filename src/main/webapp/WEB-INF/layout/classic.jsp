@@ -21,8 +21,8 @@
     </head>
     <body>
         <tilesx:useAttribute name="current" />
-        
-        
+
+
         <div class="container">
 
             <!-- Static navbar -->
@@ -40,11 +40,20 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="${current == 'index' ? 'active' : ''}"><a href="<spring:url value="/" />">Home</a></li>
-                            <li class="${current == 'users' ? 'active' : ''}" ><a href="<spring:url value="/users.html" />">Users</a></li> <!--   must be a html-->
-                            <li class="${current == 'register' ? 'active' : ''}" ><a href="<spring:url value="/register.html" />">Register</a></li> <!--   must be a html-->
-                            <li class="${current == 'login' ? 'active' : ''}" ><a href="<spring:url value="/login.html" />">Login</a></li> <!--   must be a html-->
-                            <li><a href="<spring:url value="/logout" />">Logout</a></li> <!--   must be a html-->
-
+                                
+                                <security:authorize access="hasRole('ADMIN')">
+                                    <li class="${current == 'users' ? 'active' : ''}" ><a href="<spring:url value="/users.html" />">Users</a></li> <!--   must be a html-->
+                                </security:authorize>
+                                
+                                <li class="${current == 'register' ? 'active' : ''}" ><a href="<spring:url value="/register.html" />">Register</a></li> <!--   must be a html-->
+                                
+                                <security:authorize access="!isAuthenticated()">
+                                    <li class="${current == 'login' ? 'active' : ''}" ><a href="<spring:url value="/login.html" />">Login</a></li> <!--   must be a html-->
+                                </security:authorize>
+                                
+                                <security:authorize access="isAuthenticated()">
+                                    <li><a href="<spring:url value="/logout" />">Logout</a></li> <!--   must be a html-->
+                                </security:authorize>
                         </ul>
 
                     </div><!--/.nav-collapse -->
