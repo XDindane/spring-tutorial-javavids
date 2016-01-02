@@ -1,5 +1,6 @@
 package spring.tutorial.javavids.service;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
 import org.springframework.stereotype.Service;
 import spring.tutorial.javavids.entity.Item;
 import spring.tutorial.javavids.exception.RssException;
@@ -27,7 +29,16 @@ import spring.tutorial.javavids.rss.TRssItem;
 @Service
 public class RssService {
 
-    public List<Item> getItems(Source source) throws RssException {
+    public List<Item> getItems(File file) throws RssException {
+        return getItems(new StreamSource(file));
+
+    }
+
+    public List<Item> getItems(String url) throws RssException {
+        return getItems(new StreamSource(url));
+    }
+
+    private List<Item> getItems(Source source) throws RssException {
         ArrayList<Item> list = new ArrayList<Item>();
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -38,7 +49,7 @@ public class RssService {
             List<TRssChannel> channels = rss.getChannel();
             for (TRssChannel channel : channels) {
                 List<TRssItem> items = channel.getItem();
-                
+
                 for (TRssItem rssItem : items) {
                     Item item = new Item();
                     item.setTitle(rssItem.getTitle());
