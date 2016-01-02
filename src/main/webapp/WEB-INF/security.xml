@@ -7,6 +7,8 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <global-method-security pre-post-annotations="enabled"/>
+    
     <http use-expressions="true">
         <csrf disabled="true" /> <!-- // for spring security 4-->
         <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')"/>
