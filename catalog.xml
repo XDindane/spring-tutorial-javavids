@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/denis/Development/Projects/spring_tutorial_javavids/src/main/resources/RSS20.xsd" uri="src/main/resources/jaxb/RSS20/RSS20.xsd"/>
+</catalog>
