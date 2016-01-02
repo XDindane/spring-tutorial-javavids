@@ -63,19 +63,19 @@ public class RssServiceTest {
                 new SimpleDateFormat("dd MM yyyy HH:mm:ss").format(firstItem.getPublishedDate()));
     }
 
-    /**
-     * Test of getItems method, of class RssService.
-     */
-    @org.junit.Test
-    public void testGetItems_String() throws Exception {
-        System.out.println("getItems String");
-        String url = "";
-        RssService instance = new RssService();
-        List<Item> expResult = null;
-        List<Item> result = instance.getItems(url);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of getItems method, of class RssService.
+//     */
+//    @org.junit.Test
+//    public void testGetItems_String() throws Exception {
+//        System.out.println("getItems String");
+//        String url = "";
+//        RssService instance = new RssService();
+//        List<Item> expResult = null;
+//        List<Item> result = instance.getItems(url);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }
